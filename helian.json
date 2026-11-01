@@ -115,6 +115,51 @@
       "id": "helian-akianime"
     },
     {
+      "factoryId": "web-selector",
+      "version": 2,
+      "id": "helian-lmm",
+      "arguments": {
+        "name": "路漫漫",
+        "description": "dev云播。",
+        "tier": 1,
+        "searchConfig": {
+          "searchUrl": "https://www.lmm85.com/index.php/ajax/suggest?mid=1&wd={keyword}",
+          "rawBaseUrl": "https://www.lmm85.com/",
+          "requestInterval": 3000,
+          "subjectFormatId": "json-path-indexed",
+          "channelFormatId": "index-grouped",
+          "searchUseSubjectNamesCount": 1,
+          "searchUseOnlyFirstWord": false,
+          "searchRemoveSpecial": true,
+          "filterBySubjectName": true,
+          "filterByEpisodeSort": true,
+          "matchVideo": {
+            "enableNestedUrl": false,
+            "matchNestedUrl": "^.+(m3u8|vip|xigua\\.php).+\\?",
+            "matchVideoUrl": "(?i)(?:^|[?&]url=)(?<v>https?://[^?#\\s\"'<>]+?\\.(?:m3u8|mpd|mp4|m4v|mkv|webm|mov|flv|avi)(?:\\?[^#\\s\"'<>]*)?(?:#[^\\s\"'<>]*)?)(?=&|$)",
+            "cookies": "quality=1080",
+            "addHeadersToVideo": {
+              "referer": "",
+              "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+            }
+          },
+          "selectorSubjectFormatJsonPathIndexed": {
+            "selectNames": "$.list[*].name",
+            "selectLinks": "$.list[*].id",
+            "linkTemplate": "https://www.lmm85.com/index.php/vod/detail/id/{value}.html"
+          },
+          "selectorChannelFormatFlattened": {
+            "selectChannelNames": ".module-tab-item > span",
+            "matchChannelName": "^(?<ch>dev云播)$",
+            "selectEpisodeLists": ".module-player-list",
+            "selectEpisodesFromList": "a[href*=\"/play/\"]",
+            "matchEpisodeSortFromName": "^(?:第\\s*)?(?<ep>\\d+(?:\\.\\d+)?)(?:\\s*[集话])?(?:\\s.*)?$"
+          }
+        },
+        "iconUrl": "https://www.lmm85.com/favicon.ico"
+      }
+    },
+    {
       "id": "helian-xifan-next",
       "factoryId": "json-api",
       "version": 1,
@@ -191,6 +236,52 @@
       "factoryId": "web-selector",
       "version": 2,
       "arguments": {
+        "name": "MX动漫",
+        "description": "ikun 线路，部分视频可能含插入广告。",
+        "iconUrl": "https://www.dcc3.com/favicon.ico",
+        "searchConfig": {
+          "searchUrl": "https://www.dcc3.com/search/?wd={keyword}",
+          "searchUseOnlyFirstWord": true,
+          "searchRemoveSpecial": true,
+          "rawBaseUrl": "https://www.dcc3.com",
+          "subjectFormatId": "a",
+          "selectorSubjectFormatA": {
+            "selectLists": "div.search ul li h3 a"
+          },
+          "channelFormatId": "index-grouped",
+          "selectorChannelFormatFlattened": {
+            "selectChannelNames": ".playlist .tabs a",
+            "matchChannelName": "^(?<ch>ikun)$",
+            "selectEpisodeLists": ".playlist .row ul",
+            "selectEpisodesFromList": "li a[href]",
+            "matchEpisodeSortFromName": "^(?:第\\s*)?(?<ep>\\d+(?:\\.\\d+)?)(?:\\s*[集话])?(?:\\s.*)?$"
+          },
+          "filterByEpisodeSort": true,
+          "filterBySubjectName": true,
+          "selectMedia": {
+            "distinguishSubjectName": true,
+            "distinguishChannelName": true
+          },
+          "matchVideo": {
+            "enableNestedUrl": false,
+            "matchNestedUrl": "^.+(m3u8|vip|xigua\\.php).+\\?",
+            "matchVideoUrl": "(?i)(?:^|[?&]url=)(?<v>https?://[^?#\\s\"'<>]+?\\.(?:m3u8|mpd|mp4|m4v|mkv|webm|mov|flv|avi)(?:\\?[^#\\s\"'<>]*)?(?:#[^\\s\"'<>]*)?)(?=&|$)",
+            "cookies": "quality=1080",
+            "addHeadersToVideo": {
+              "referer": "",
+              "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+            }
+          },
+          "defaultResolution": "720P"
+        },
+        "tier": 3
+      },
+      "id": "helian-mxdm"
+    },
+    {
+      "factoryId": "web-selector",
+      "version": 2,
+      "arguments": {
         "name": "AGE动漫",
         "description": "可能需要手动完成人机验证，暂未验证播放。",
         "iconUrl": "https://cdn.aiqingyu1314.com/age/statics/images/avatar.jpg?v=2024042101",
@@ -253,6 +344,58 @@
         "tier": 3
       },
       "id": "helian-age"
+    },
+    {
+      "factoryId": "web-selector",
+      "version": 2,
+      "id": "helian-baimao",
+      "arguments": {
+        "name": "黑猫动漫",
+        "description": "仅供手动查找，视频内含广告。",
+        "tier": 4,
+        "searchConfig": {
+          "searchUrl": "https://www.baimaodm.com/s_all?ex=1&kw={keyword}",
+          "rawBaseUrl": "https://www.baimaodm.com/",
+          "requestInterval": 3000,
+          "subjectFormatId": "a",
+          "selectorSubjectFormatA": {
+            "selectLists": ".lpic h2 a"
+          },
+          "channelFormatId": "index-grouped",
+          "searchUseSubjectNamesCount": 1,
+          "searchUseOnlyFirstWord": false,
+          "searchRemoveSpecial": true,
+          "filterBySubjectName": true,
+          "filterByEpisodeSort": true,
+          "matchVideo": {
+            "enableNestedUrl": false,
+            "matchNestedUrl": "^.+(m3u8|vip|xigua\\.php).+\\?",
+            "matchVideoUrl": "(?i)(?:^|[?&]url=)(?<v>https?://[^?#\\s\"'<>]+?\\.(?:m3u8|mpd|mp4|m4v|mkv|webm|mov|flv|avi)(?:\\?[^#\\s\"'<>]*)?(?:#[^\\s\"'<>]*)?)(?=&|$)",
+            "cookies": "quality=1080",
+            "addHeadersToVideo": {
+              "referer": "",
+              "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+            }
+          },
+          "selectorChannelFormatFlattened": {
+            "selectChannelNames": "#menu0 > li",
+            "matchChannelName": "^(?<ch>播放Ⅵ)$",
+            "selectEpisodeLists": "#main0 > .movurl:not(.movurl_pan)",
+            "selectEpisodesFromList": "a[href*=\"/play/\"]",
+            "matchEpisodeSortFromName": "^(?:第\\s*)?(?<ep>\\d+(?:\\.\\d+)?)(?:\\s*[集话])?(?:\\s.*)?$"
+          },
+          "defaultResolution": "720P",
+          "autoMatch": {
+            "enabled": false,
+            "searchUseOnlyFirstWord": false,
+            "searchRemoveSpecial": true,
+            "searchUseSubjectNamesCount": 1,
+            "preferShorterName": true,
+            "filterByEpisodeSort": true
+          }
+        },
+        "iconUrl": "https://www.baimaodm.com/favicon.ico"
+      }
     }
   ],
   "exportedMediaSourceDataList": {
@@ -369,6 +512,51 @@
         "id": "helian-akianime"
       },
       {
+        "factoryId": "web-selector",
+        "version": 2,
+        "id": "helian-lmm",
+        "arguments": {
+          "name": "路漫漫",
+          "description": "dev云播。",
+          "tier": 1,
+          "searchConfig": {
+            "searchUrl": "https://www.lmm85.com/index.php/ajax/suggest?mid=1&wd={keyword}",
+            "rawBaseUrl": "https://www.lmm85.com/",
+            "requestInterval": 3000,
+            "subjectFormatId": "json-path-indexed",
+            "channelFormatId": "index-grouped",
+            "searchUseSubjectNamesCount": 1,
+            "searchUseOnlyFirstWord": false,
+            "searchRemoveSpecial": true,
+            "filterBySubjectName": true,
+            "filterByEpisodeSort": true,
+            "matchVideo": {
+              "enableNestedUrl": false,
+              "matchNestedUrl": "^.+(m3u8|vip|xigua\\.php).+\\?",
+              "matchVideoUrl": "(?i)(?:^|[?&]url=)(?<v>https?://[^?#\\s\"'<>]+?\\.(?:m3u8|mpd|mp4|m4v|mkv|webm|mov|flv|avi)(?:\\?[^#\\s\"'<>]*)?(?:#[^\\s\"'<>]*)?)(?=&|$)",
+              "cookies": "quality=1080",
+              "addHeadersToVideo": {
+                "referer": "",
+                "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+              }
+            },
+            "selectorSubjectFormatJsonPathIndexed": {
+              "selectNames": "$.list[*].name",
+              "selectLinks": "$.list[*].id",
+              "linkTemplate": "https://www.lmm85.com/index.php/vod/detail/id/{value}.html"
+            },
+            "selectorChannelFormatFlattened": {
+              "selectChannelNames": ".module-tab-item > span",
+              "matchChannelName": "^(?<ch>dev云播)$",
+              "selectEpisodeLists": ".module-player-list",
+              "selectEpisodesFromList": "a[href*=\"/play/\"]",
+              "matchEpisodeSortFromName": "^(?:第\\s*)?(?<ep>\\d+(?:\\.\\d+)?)(?:\\s*[集话])?(?:\\s.*)?$"
+            }
+          },
+          "iconUrl": "https://www.lmm85.com/favicon.ico"
+        }
+      },
+      {
         "id": "helian-xifan-next",
         "factoryId": "json-api",
         "version": 1,
@@ -445,6 +633,52 @@
         "factoryId": "web-selector",
         "version": 2,
         "arguments": {
+          "name": "MX动漫",
+          "description": "ikun 线路，部分视频可能含插入广告。",
+          "iconUrl": "https://www.dcc3.com/favicon.ico",
+          "searchConfig": {
+            "searchUrl": "https://www.dcc3.com/search/?wd={keyword}",
+            "searchUseOnlyFirstWord": true,
+            "searchRemoveSpecial": true,
+            "rawBaseUrl": "https://www.dcc3.com",
+            "subjectFormatId": "a",
+            "selectorSubjectFormatA": {
+              "selectLists": "div.search ul li h3 a"
+            },
+            "channelFormatId": "index-grouped",
+            "selectorChannelFormatFlattened": {
+              "selectChannelNames": ".playlist .tabs a",
+              "matchChannelName": "^(?<ch>ikun)$",
+              "selectEpisodeLists": ".playlist .row ul",
+              "selectEpisodesFromList": "li a[href]",
+              "matchEpisodeSortFromName": "^(?:第\\s*)?(?<ep>\\d+(?:\\.\\d+)?)(?:\\s*[集话])?(?:\\s.*)?$"
+            },
+            "filterByEpisodeSort": true,
+            "filterBySubjectName": true,
+            "selectMedia": {
+              "distinguishSubjectName": true,
+              "distinguishChannelName": true
+            },
+            "matchVideo": {
+              "enableNestedUrl": false,
+              "matchNestedUrl": "^.+(m3u8|vip|xigua\\.php).+\\?",
+              "matchVideoUrl": "(?i)(?:^|[?&]url=)(?<v>https?://[^?#\\s\"'<>]+?\\.(?:m3u8|mpd|mp4|m4v|mkv|webm|mov|flv|avi)(?:\\?[^#\\s\"'<>]*)?(?:#[^\\s\"'<>]*)?)(?=&|$)",
+              "cookies": "quality=1080",
+              "addHeadersToVideo": {
+                "referer": "",
+                "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+              }
+            },
+            "defaultResolution": "720P"
+          },
+          "tier": 3
+        },
+        "id": "helian-mxdm"
+      },
+      {
+        "factoryId": "web-selector",
+        "version": 2,
+        "arguments": {
           "name": "AGE动漫",
           "description": "可能需要手动完成人机验证，暂未验证播放。",
           "iconUrl": "https://cdn.aiqingyu1314.com/age/statics/images/avatar.jpg?v=2024042101",
@@ -507,6 +741,58 @@
           "tier": 3
         },
         "id": "helian-age"
+      },
+      {
+        "factoryId": "web-selector",
+        "version": 2,
+        "id": "helian-baimao",
+        "arguments": {
+          "name": "黑猫动漫",
+          "description": "仅供手动查找，视频内含广告。",
+          "tier": 4,
+          "searchConfig": {
+            "searchUrl": "https://www.baimaodm.com/s_all?ex=1&kw={keyword}",
+            "rawBaseUrl": "https://www.baimaodm.com/",
+            "requestInterval": 3000,
+            "subjectFormatId": "a",
+            "selectorSubjectFormatA": {
+              "selectLists": ".lpic h2 a"
+            },
+            "channelFormatId": "index-grouped",
+            "searchUseSubjectNamesCount": 1,
+            "searchUseOnlyFirstWord": false,
+            "searchRemoveSpecial": true,
+            "filterBySubjectName": true,
+            "filterByEpisodeSort": true,
+            "matchVideo": {
+              "enableNestedUrl": false,
+              "matchNestedUrl": "^.+(m3u8|vip|xigua\\.php).+\\?",
+              "matchVideoUrl": "(?i)(?:^|[?&]url=)(?<v>https?://[^?#\\s\"'<>]+?\\.(?:m3u8|mpd|mp4|m4v|mkv|webm|mov|flv|avi)(?:\\?[^#\\s\"'<>]*)?(?:#[^\\s\"'<>]*)?)(?=&|$)",
+              "cookies": "quality=1080",
+              "addHeadersToVideo": {
+                "referer": "",
+                "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+              }
+            },
+            "selectorChannelFormatFlattened": {
+              "selectChannelNames": "#menu0 > li",
+              "matchChannelName": "^(?<ch>播放Ⅵ)$",
+              "selectEpisodeLists": "#main0 > .movurl:not(.movurl_pan)",
+              "selectEpisodesFromList": "a[href*=\"/play/\"]",
+              "matchEpisodeSortFromName": "^(?:第\\s*)?(?<ep>\\d+(?:\\.\\d+)?)(?:\\s*[集话])?(?:\\s.*)?$"
+            },
+            "defaultResolution": "720P",
+            "autoMatch": {
+              "enabled": false,
+              "searchUseOnlyFirstWord": false,
+              "searchRemoveSpecial": true,
+              "searchUseSubjectNamesCount": 1,
+              "preferShorterName": true,
+              "filterByEpisodeSort": true
+            }
+          },
+          "iconUrl": "https://www.baimaodm.com/favicon.ico"
+        }
       }
     ]
   }

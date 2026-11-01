@@ -1,0 +1,353 @@
+{
+  "date": "2026-11-01",
+  "timezone": "Asia/Shanghai",
+  "kazumiRulesCommit": "2967d7babafffa92dbf35fbcb69d0fd964139e63",
+  "animekoEngineCommit": "8ca97e5d54f9a97dddb1a4fb2ec89d411e1b7802",
+  "platform": "Windows desktop",
+  "subscriptionSha256": "f36d1cbb54881f153c57b5336c5cf13357d4c91d4f953693f5315046c6811d1e",
+  "reviewedRules": [
+    {
+      "rule": "7sefun",
+      "version": "1.3",
+      "site": "https://www.7sefun.top/",
+      "status": "未纳入",
+      "detail": "解析可用；此前样本地址404，本轮孤独摇滚两条线路均未完成视频提取。"
+    },
+    {
+      "rule": "aafun",
+      "version": "1.2",
+      "site": "https://www.moonci.com/",
+      "status": "同站规则",
+      "detail": "与 moonci 指向同一站点，本轮采用 moonci 的 API 搜索规则统一验证。"
+    },
+    {
+      "rule": "AGE",
+      "version": "1.6",
+      "site": "https://www.agedm.io/",
+      "status": "保留，需手动验证",
+      "detail": "此前自动人机验证失败；按用户要求保留，尚未取得实播通过证据。"
+    },
+    {
+      "rule": "akianime",
+      "version": "1.4",
+      "site": "https://www.akianime.cc/",
+      "status": "已有",
+      "detail": "秋之动漫，保留超高画三线；已有多部番实播记录。"
+    },
+    {
+      "rule": "baimao",
+      "version": "1.0",
+      "site": "https://www.baimaodm.com/",
+      "status": "新增，手动查找",
+      "detail": "黑猫动漫的播放Ⅵ线路通过两部番及相邻集实播；视频内广告遮挡明显，仅供手动查找。"
+    },
+    {
+      "rule": "dalvdm",
+      "version": "1.2",
+      "site": "https://www.sbdl.cc/",
+      "status": "未纳入",
+      "detail": "搜索阶段自动人机验证失败，按测试规则停止。"
+    },
+    {
+      "rule": "DM84",
+      "version": "1.4",
+      "site": "https://dmbus.cc/",
+      "status": "未纳入",
+      "detail": "芙莉莲第1集实播通过；孤独摇滚和药屋少女样本地址打开失败；搜索也出现过限流。"
+    },
+    {
+      "rule": "ezdmw",
+      "version": "1.2",
+      "site": "https://m.ezdmw.org/",
+      "status": "未纳入",
+      "detail": "已补充无常见视频后缀的接口匹配；自动提取仍未完成，手工取到的视频接口在播放器中打开失败。孤独摇滚首候选是总集篇，未算作TV版通过。"
+    },
+    {
+      "rule": "giriGiriLove",
+      "version": "2.6",
+      "site": "https://ani.girigirilove.com",
+      "status": "已有",
+      "detail": "girigiri 已在订阅中，保留简中、繁中线路。"
+    },
+    {
+      "rule": "LMM",
+      "version": "2.3",
+      "site": "https://www.lmm85.com/",
+      "status": "新增，自动匹配",
+      "detail": "路漫漫保留 dev云播；芙莉莲第1/2集、药屋少女第一季第1集实播通过。dp云播样本无法播放，聚合线路未取得通过证据，不纳入。"
+    },
+    {
+      "rule": "mgnacg",
+      "version": "1.2",
+      "site": "https://www.mgnacg.com/media/",
+      "status": "未纳入",
+      "detail": "此前自动人机验证失败，未继续请求。"
+    },
+    {
+      "rule": "moonci",
+      "version": "1.1",
+      "site": "https://www.moonci.com/",
+      "status": "未纳入",
+      "detail": "搜索及列表解析可用；两条线路均未完成视频提取，部分播放页嵌套 Next 页面。"
+    },
+    {
+      "rule": "mutefun",
+      "version": "1.6",
+      "site": "https://www.mutedm.com",
+      "status": "未纳入",
+      "detail": "此前自动人机验证失败，未继续请求。"
+    },
+    {
+      "rule": "MXdm",
+      "version": "2.4",
+      "site": "https://www.dcc3.com",
+      "status": "新增，自动匹配备用",
+      "detail": "MX动漫保留 ikun；芙莉莲第1集、孤独摇滚第1/2集通过。高清、非凡、量子样本未通过；已提示插入广告。"
+    },
+    {
+      "rule": "sorani",
+      "version": "1.0",
+      "site": "https://www.sorani.net/",
+      "status": "未纳入",
+      "detail": "可取得搜索和剧集元数据；播放接口曾返回请求来源不受信任，补充浏览器请求头后仍未取得视频地址。浏览器提取也未完成；接口名包含m3u8的请求已排除为误匹配。"
+    },
+    {
+      "rule": "TvTFun",
+      "version": "1.3",
+      "site": "https://www.tvtfun.net",
+      "status": "未纳入",
+      "detail": "已用网页搜索兼容列表解析；芙莉莲抽到3秒错误提示片，孤独摇滚样本地址打开失败，均未计为通过。"
+    },
+    {
+      "rule": "xfdmneo",
+      "version": "1.1",
+      "site": "https://dm1.xfdm.pro/",
+      "status": "由 Next 覆盖",
+      "detail": "此前未签名视频地址401；当前使用已修正查询配置的稀饭动漫 Next。"
+    },
+    {
+      "rule": "xfdmnext",
+      "version": "1.1",
+      "site": "https://next.xifanacg.com/",
+      "status": "已有",
+      "detail": "稀饭动漫 Next 使用 Ani 内置 JSON API 规则，filterByEpisodeSort=false，保留相邻集资源查询结果。"
+    }
+  ],
+  "nativePlaybackTests": [
+    {
+      "sourceId": "helian-lmm",
+      "subject": "葬送的芙莉莲",
+      "subjectId": 400602,
+      "episodeId": 1227087,
+      "episode": "1",
+      "playedSeconds": 15,
+      "durationSeconds": 1559.986,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "frameRate": "23.976",
+        "bitrate": 3306180
+      },
+      "bufferingCount": 0,
+      "frameReviewed": true,
+      "containsVisibleAdvertising": false,
+      "hlsFilter": null,
+      "evidenceId": "kfull8-play-LMM-frieren"
+    },
+    {
+      "sourceId": "helian-lmm",
+      "subject": "葬送的芙莉莲",
+      "subjectId": 400602,
+      "episodeId": 1227088,
+      "episode": "2",
+      "playedSeconds": 15,
+      "durationSeconds": 1560.079,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "frameRate": "23.976",
+        "bitrate": 3331480
+      },
+      "bufferingCount": 0,
+      "frameReviewed": true,
+      "containsVisibleAdvertising": false,
+      "hlsFilter": null,
+      "evidenceId": "kfull14-play-LMM-frieren2"
+    },
+    {
+      "sourceId": "helian-lmm",
+      "subject": "药屋少女的呢喃 第一季",
+      "subjectId": 420628,
+      "episodeId": 1244591,
+      "episode": "1",
+      "playedSeconds": 15,
+      "durationSeconds": 1370.047,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "frameRate": "23.976",
+        "bitrate": 2048181
+      },
+      "bufferingCount": 0,
+      "frameReviewed": true,
+      "containsVisibleAdvertising": false,
+      "hlsFilter": null,
+      "evidenceId": "kfull14-play-LMM-apothecary"
+    },
+    {
+      "sourceId": "helian-mxdm",
+      "subject": "葬送的芙莉莲",
+      "subjectId": 400602,
+      "episodeId": 1227087,
+      "episode": "1",
+      "playedSeconds": 15,
+      "durationSeconds": 1612.65,
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "frameRate": "23.976",
+        "bitrate": 1797403
+      },
+      "bufferingCount": 0,
+      "frameReviewed": true,
+      "containsVisibleAdvertising": false,
+      "hlsFilter": "filtered",
+      "evidenceId": "kfull14-play-MXdm-frieren"
+    },
+    {
+      "sourceId": "helian-mxdm",
+      "subject": "孤独摇滚！",
+      "subjectId": 328609,
+      "episodeId": 1128641,
+      "episode": "1",
+      "playedSeconds": 15,
+      "durationSeconds": 1477.896,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "frameRate": "23.976",
+        "bitrate": 860270
+      },
+      "bufferingCount": 0,
+      "frameReviewed": true,
+      "containsVisibleAdvertising": false,
+      "hlsFilter": "filtered",
+      "evidenceId": "kfull11-play-MXdm-0"
+    },
+    {
+      "sourceId": "helian-mxdm",
+      "subject": "孤独摇滚！",
+      "subjectId": 328609,
+      "episodeId": 1128642,
+      "episode": "2",
+      "playedSeconds": 15,
+      "durationSeconds": 1477.94,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "frameRate": "23.976",
+        "bitrate": 1098488
+      },
+      "bufferingCount": 0,
+      "frameReviewed": true,
+      "containsVisibleAdvertising": false,
+      "hlsFilter": "filtered",
+      "evidenceId": "kfull14-play-MXdm-bocchi2"
+    },
+    {
+      "sourceId": "helian-baimao",
+      "subject": "葬送的芙莉莲",
+      "subjectId": 400602,
+      "episodeId": 1227087,
+      "episode": "1",
+      "playedSeconds": 25,
+      "durationSeconds": 1559.92,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "frameRate": "25",
+        "bitrate": 1307644
+      },
+      "bufferingCount": 0,
+      "frameReviewed": true,
+      "containsVisibleAdvertising": true,
+      "hlsFilter": null,
+      "evidenceId": "kfull19-baimao-play-frieren"
+    },
+    {
+      "sourceId": "helian-baimao",
+      "subject": "葬送的芙莉莲",
+      "subjectId": 400602,
+      "episodeId": 1227088,
+      "episode": "2",
+      "playedSeconds": 10,
+      "durationSeconds": 1560.0,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "frameRate": "25",
+        "bitrate": 1439172
+      },
+      "bufferingCount": 0,
+      "frameReviewed": true,
+      "containsVisibleAdvertising": true,
+      "hlsFilter": null,
+      "evidenceId": "kfull19-baimao-play-frieren2"
+    },
+    {
+      "sourceId": "helian-baimao",
+      "subject": "孤独摇滚！",
+      "subjectId": 328609,
+      "episodeId": 1128641,
+      "episode": "1",
+      "playedSeconds": 25,
+      "durationSeconds": 1425.24,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "frameRate": "25",
+        "bitrate": 1307888
+      },
+      "bufferingCount": 0,
+      "frameReviewed": true,
+      "containsVisibleAdvertising": true,
+      "hlsFilter": null,
+      "evidenceId": "kfull19-baimao-play-bocchi"
+    }
+  ],
+  "adjacentEpisodes": {
+    "LMM": [
+      "01..01",
+      "02..02"
+    ],
+    "MXdm": [
+      "01..01",
+      "02..02"
+    ]
+  },
+  "manualOnlySourceIds": [
+    "helian-baimao"
+  ],
+  "method": [
+    "通过标准 MCP 客户端调用本机 ani-datasource-test。",
+    "先校验规则，再验证搜索、列表、视频提取及同款 mpv 播放器实播；抽取截图核对正片。",
+    "自动验证失败的源停止；未在 Kazumi 原客户端做逐项对照。",
+    "独立测试器使用有限的网络超时、额外请求采样；连通检查与正式查询间隔3秒。"
+  ],
+  "limitations": [
+    "样本只播放10至25秒，不代表整集、整季、所有线路或长期在线率。",
+    "没有修改 Ani 源码、播放逻辑或切集逻辑；没有操作用户当前 App 订阅。",
+    "HTTP探测失败与播放器实播分开记录；部分已实播地址在HTTP探测中超时或返回失败。",
+    "黑猫具有明显视频内广告，仅供手动查找。MX已测样本可被Ani HLS过滤器识别出部分插入广告，不代表全部广告均可去除。",
+    "未纳入不表示站点永久失效；仅表示本次未满足交付条件。"
+  ]
+}
