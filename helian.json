@@ -276,7 +276,10 @@
         },
         "tier": 3
       },
-      "id": "helian-mxdm"
+      "id": "helian-mxdm",
+      "tags": [
+        "hls-ads"
+      ]
     },
     {
       "factoryId": "web-selector",
@@ -673,7 +676,10 @@
           },
           "tier": 3
         },
-        "id": "helian-mxdm"
+        "id": "helian-mxdm",
+        "tags": [
+          "hls-ads"
+        ]
       },
       {
         "factoryId": "web-selector",

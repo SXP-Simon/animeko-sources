@@ -4,7 +4,7 @@
   "kazumiRulesCommit": "2967d7babafffa92dbf35fbcb69d0fd964139e63",
   "animekoEngineCommit": "8ca97e5d54f9a97dddb1a4fb2ec89d411e1b7802",
   "platform": "Windows desktop",
-  "subscriptionSha256": "f36d1cbb54881f153c57b5336c5cf13357d4c91d4f953693f5315046c6811d1e",
+  "subscriptionSha256": "3572d9448ca80d321da75aa2a4f52f6888dd5fef2e85aaf8bf45c8630f45ec0e",
   "reviewedRules": [
     {
       "rule": "7sefun",
@@ -349,5 +349,96 @@
     "HTTP探测失败与播放器实播分开记录；部分已实播地址在HTTP探测中超时或返回失败。",
     "黑猫具有明显视频内广告，仅供手动查找。MX已测样本可被Ani HLS过滤器识别出部分插入广告，不代表全部广告均可去除。",
     "未纳入不表示站点永久失效；仅表示本次未满足交付条件。"
+  ],
+  "additionalSourceReviews": [
+    {
+      "source": "Anime7",
+      "reference": "https://github.com/creamycake-anime/animeko-subs/pull/25",
+      "ruleCommit": "f3013c4b8a37241a9d8ba8482e946eacb37f3de1",
+      "status": "未纳入",
+      "configurationValid": true,
+      "tests": [
+        {
+          "subject": "葬送的芙莉莲",
+          "subjectId": 400602,
+          "episodeId": 1227087,
+          "episode": "1",
+          "resolvedVideo": true,
+          "nativePlaybackRan": true,
+          "nativePlaybackOk": false,
+          "httpStatus": 403,
+          "upstreamMessage": "The region has been denied.",
+          "evidenceId": "anime7-play-frieren1"
+        },
+        {
+          "subject": "葬送的芙莉莲",
+          "subjectId": 400602,
+          "episodeId": 1227088,
+          "episode": "2",
+          "resolvedVideo": true,
+          "nativePlaybackRan": true,
+          "nativePlaybackOk": false,
+          "httpStatus": 403,
+          "upstreamMessage": "The region has been denied.",
+          "evidenceId": "anime7-play-frieren2"
+        },
+        {
+          "subject": "孤独摇滚！",
+          "subjectId": 328609,
+          "episodeId": 1128641,
+          "episode": "1",
+          "resolvedVideo": true,
+          "nativePlaybackRan": true,
+          "nativePlaybackOk": false,
+          "httpStatus": 403,
+          "upstreamMessage": "The region has been denied.",
+          "evidenceId": "anime7-play-bocchi1"
+        },
+        {
+          "subject": "药屋少女的呢喃 第一季",
+          "subjectId": 420628,
+          "episodeId": 1244591,
+          "episode": "1",
+          "resolvedVideo": true,
+          "nativePlaybackRan": true,
+          "nativePlaybackOk": false,
+          "httpStatus": 403,
+          "upstreamMessage": "The region has been denied.",
+          "evidenceId": "anime7-play-apothecary1"
+        }
+      ],
+      "limitation": "仅代表本机当前网络出口；搜索、选集及视频提取成功，视频 CDN vip.dytt-hot.com 拒绝本次出口，无法据此断言所有地区不可播放。"
+    }
+  ],
+  "sourceTags": [
+    {
+      "sourceId": "helian-mxdm",
+      "tags": [
+        "hls-ads"
+      ],
+      "subjectId": 400602,
+      "episodeId": 1227087,
+      "filterStatus": "filtered",
+      "filterable": true,
+      "removedGroups": [
+        {
+          "startSeconds": 174.078,
+          "endSeconds": 191.718,
+          "durationSeconds": 17.64
+        },
+        {
+          "startSeconds": 866.883,
+          "endSeconds": 884.523,
+          "durationSeconds": 17.64
+        },
+        {
+          "startSeconds": 1595.011,
+          "endSeconds": 1612.651,
+          "durationSeconds": 17.64
+        }
+      ],
+      "evidenceId": "anime7-followup-mx-ads",
+      "note": "支持此标签的客户端在智能 HLS 广告过滤模式下为该源启用过滤；关闭过滤时不生效。本次核对视频提取和过滤器输出，未进行过滤后全流程播放验证。"
+    }
   ]
 }
